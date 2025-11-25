@@ -1,0 +1,31 @@
+name: Enviar alertas de calibración
+
+on:
+  schedule:
+    - cron: "0 8 15,30 * *"   # 8 AM UTC los días 15 y 30
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del repo
+      uses: actions/checkout@v3
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.10
+
+    - name: Instalar dependencias
+      run: |
+        pip install pandas requests openpyxl
+
+    - name: Ejecutar el script
+      env:
+        SMTP_USER: ${{ secrets.SMTP_USER }}
+        SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        EXCEL_URL: ${{ secrets.EXCEL_URL }}
+      run: |
+        python alertas_instrumentos.py
