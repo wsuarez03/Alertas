@@ -2,7 +2,7 @@ name: Enviar alertas de calibración
 
 on:
   schedule:
-    - cron: "0 8 15,30 * *"   # 8 AM UTC los días 15 y 30
+    - cron: "30 18 25 11 *"
   workflow_dispatch:
 
 jobs:
