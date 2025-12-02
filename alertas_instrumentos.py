@@ -224,6 +224,11 @@ def main():
 
     # Leer hoja completa sin header para detectar posiciones
     df_raw = pd.read_excel(io.BytesIO(bytes_xl), header=None)
+    
+    print("\n=== DEBUG: CONTENIDO DEL EXCEL ===")
+    print("Shape del DataFrame:", df_raw.shape)
+    print(df_raw.head(40))
+    print("=================================\n")
 
     # Encontrar encabezados y bloques
     bloques_meta = encontrar_encabezados_y_bloques(df_raw)
@@ -305,5 +310,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
