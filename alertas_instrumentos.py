@@ -32,7 +32,7 @@ def descargar_excel_bytes(url):
 
 
 def encontrar_encabezados_y_bloques(df_raw):
-    encabezado_tokens = ["IDENTIFIC", "EQUIPO", "INSTRUMENTO", "FABRICANTE"]
+    encabezado_tokens = ["IDENTIFICACIÓN", "EQUIPO", "INSTRUMENTO", "FABRICANTE"]
     posibles_tipos = ["PLANTA", "VST2", "VST 2", "VST3", "VST 3", "VST-2", "VST-3"]
 
     header_rows = []
@@ -305,4 +305,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
