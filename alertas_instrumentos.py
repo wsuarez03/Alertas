@@ -237,7 +237,7 @@ def main():
     bytes_xl = descargar_excel_bytes(EXCEL_URL)
 
     # Leer hoja completa sin header para detectar posiciones
-    df_raw = pd.read_excel(io.BytesIO(bytes_xl), header=None)
+    df_raw = pd.read_excel(io.BytesIO(bytes_xl), sheet_name="CONTROL CALIBRACIONES", header=None)
     
     print("\n=== DEBUG: CONTENIDO DEL EXCEL ===")
     print("Shape del DataFrame:", df_raw.shape)
@@ -324,4 +324,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
