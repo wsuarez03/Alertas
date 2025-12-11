@@ -11,7 +11,7 @@ EXCEL_URL = "https://valserindustriales-my.sharepoint.com/personal/sst_valserind
 
 DIAS_AVISO = 15
 CORREOS_DESTINO = [
-    "wilderalberto2000@gmail.com",
+    "asesorcomercial@valserindustriales.com",
     "tecnicodeservicios@valserindustriales.com"
 ]
 
@@ -324,5 +324,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
