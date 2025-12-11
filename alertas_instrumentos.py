@@ -42,7 +42,21 @@ def encontrar_encabezados_y_bloques(df_raw):
             header_rows.append(idx)
 
     if not header_rows:
-        raise Exception("No se encontraron filas de encabezado en la hoja.")
+        # DEBUG: mostrar qué se encontró en el Excel
+        print("\n=== ERROR: Estructura de Excel no válida ===")
+        print(f"El archivo no contiene las columnas esperadas: {encabezado_tokens}")
+        print("Contenido actual del Excel:")
+        print(df_raw.to_string())
+        print("\nPor favor, verificar:")
+        print("1. El URL del Excel es correcto")
+        print("2. El archivo Excel tiene la estructura esperada con columnas:")
+        print("   - IDENTIFICACIÓN / IDENTIFICACION")
+        print("   - EQUIPO")
+        print("   - INSTRUMENTO")
+        print("   - FABRICANTE")
+        print("   - FECHA PROXIMA CALIBRACION")
+        print("==========================================\n")
+        raise Exception("No se encontraron filas de encabezado en la hoja. Estructura esperada no válida.")
 
     bloques = []
 
