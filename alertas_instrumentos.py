@@ -7,7 +7,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # === CONFIGURACIÓN ===
-EXCEL_URL = os.getenv("EXCEL_URL")
+EXCEL_URL = "https://valserindustriales-my.sharepoint.com/personal/sst_valserindustriales_com/_layouts/15/download.aspx?share=EX92mI4ZUiRKgyLGkriSWP4BFF5E4yCIuMbIQif16dm9Ug"
 
 DIAS_AVISO = 15
 CORREOS_DESTINO = [
@@ -324,3 +324,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
